@@ -32,6 +32,7 @@ Link for ARM IP : https://developer.arm.com/products/designstart
 
 ## SOC Block Diagram
 ![Screenshot](images/Blockdiagram.png)
+
 The above diagram reprasents the general architecture for AHB based designs from ARM. In this SOC we have 2 slave devices one being the code memory and the other is the LED block.
 
 ## On chip memory
