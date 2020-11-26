@@ -59,5 +59,27 @@ For programming the processor we need an interface. So, in this project I have u
         wire          tdo_tms        = dbg_jtag_nsw         ? dbg_tdo    : dbg_swo;
         assign        TMS            = dbg_swdo_en          ? dbg_swdo   : 1'bz;
         assign        TDO            = tdo_enable           ? tdo_tms    : 1'bz;
+        
+## Peripherals
+The two peripherals in this SOC are the Block RAM and the LEDs.
+
+### Block RAM AHB interface
+The verilog code below is the AHB Block RAM interface.
+
+    AHB2MEM uAHB2RAM (
+          //AHBLITE Signals
+          .HSEL(hsel_mem),
+          .HCLK(fclk), 
+          .HRESETn(hresetn), 
+          .HREADY(hreadys),     
+          .HADDR(haddrs),
+          .HTRANS(htranss), 
+          .HWRITE(hwrites),
+          .HSIZE(hsizes),
+          .HWDATA(hwdatas), 
+
+          .HRDATA(hrdata_mem), 
+          .HREADYOUT(hready_mem)
+        );
 
 
