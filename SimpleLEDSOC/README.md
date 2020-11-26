@@ -71,11 +71,31 @@ An AHB-Lite master provides address and control information to initiate read and
 An AHB-Lite slave responds to transfers initiated by masters in the system. The slave uses the HSELx select signal from the decoder to control when it responds to a bus
 transfer. The slave signals back to the master:
 
-    • the success
-    • failure
-    • or waiting of the data transfer
+    • The success
+    • Failure
+    • Waiting of the data transfer
     
 ![Screenshot](images/AHBLITEM.png)
+
+### Working
+The master starts a transfer by driving the address and control signals. These signals provide information about the address, direction, width of the transfer, and indicate if
+the transfer forms part of a burst.
+
+Transfers can be:
+
+    • Single
+    • Incrementing bursts that do not wrap at address boundaries
+    • Wrapping bursts that wrap at particular address boundaries.
+    
+The write data bus moves data from the master to a slave, and the read data bus moves data from a slave to the master.
+Every transfer consists of:
+
+     • Address phase one address and control cycle
+     • Data phase one or more cycles for the data.
+     
+A slave cannot request that the address phase is extended and therefore all slaves must be capable of sampling the address during this time. However, a slave can request that
+the master extends the data phase by using HREADY. This signal, when LOW, causes wait states to be inserted into the transfer and enables the slave to have extra time to
+provide or sample data. The slave uses HRESP to indicate the success or failure of a transfer.
   
 ### Peripherals
 The two peripherals in this SOC are the Block RAM and the LEDs.
