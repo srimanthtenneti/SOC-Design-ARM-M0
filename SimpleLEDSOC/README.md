@@ -159,7 +159,12 @@ The verilog code below instantiates the AHB LED interface.
             .LED(LED[6:0])
         );
 
+### Implementation on FPGA
+![Screenshot](images/SOCIMPL.jpeg)
+
 ### Video Link
 1. Video Series : https://www.youtube.com/watch?v=j7KdeELvnns
 2. Demo : https://www.youtube.com/watch?v=2oi_iIShGdU
+
+
 
