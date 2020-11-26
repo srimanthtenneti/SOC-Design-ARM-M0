@@ -53,7 +53,20 @@ For programming the processor we need an interface. So, in this project I have u
         wire          tdo_tms        = dbg_jtag_nsw         ? dbg_tdo    : dbg_swo;
         assign        TMS            = dbg_swdo_en          ? dbg_swdo   : 1'bz;
         assign        TDO            = tdo_enable           ? tdo_tms    : 1'bz;
-        
+  
+### AHB-Lite Bus
+AMBA AHB-Lite addresses the requirements of high-performance synthesizable designs. It is a bus interface that supports a single bus master and provides high-bandwidth operation. 
+
+AHB-Lite implements the features required for high-performance, high clock frequency systems including:
+    • burst transfers
+    • single-clock edge operation
+    • non-tristate implementation
+    • wide data bus configurations, 64, 128, 256, 512, and 1024 bits
+    
+### AHB-Lite Master
+An AHB-Lite master provides address and control information to initiate read and writem operations. The figure below shows a typical AHB-Lite Master. 
+![Screenshot](images/AHBLITEM.png)
+  
 ### Peripherals
 The two peripherals in this SOC are the Block RAM and the LEDs.
 
