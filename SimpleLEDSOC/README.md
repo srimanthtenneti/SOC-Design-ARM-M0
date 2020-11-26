@@ -1,4 +1,6 @@
 # Simple LED SOC
+## The idea
+The main idea behind this simple project is to understand the concepts of the AHB-Lite bus , understand the working of the Cortex-M0 processor and learn to add peripherals to the AHB-Lite bus.
 
 The hardware components of the SoC include:
 
@@ -57,11 +59,11 @@ AHB-Lite implements the features required for high-performance, high clock frequ
     • non-tristate implementation
     • wide data bus configurations, 64, 128, 256, 512, and 1024 bits
     
-### AHB-Lite Master
+#### AHB-Lite Master
 An AHB-Lite master provides address and control information to initiate read and writem operations. The figure below shows a typical AHB-Lite Master. 
 ![Screenshot](images/AHBLITES.png)
 
-### AHB-Lite Slave
+#### AHB-Lite Slave
 An AHB-Lite slave responds to transfers initiated by masters in the system. The slave uses the HSELx select signal from the decoder to control when it responds to a bus
 transfer. The slave signals back to the master:
 
@@ -71,7 +73,7 @@ transfer. The slave signals back to the master:
     
 ![Screenshot](images/AHBLITEM.png)
 
-### Working
+#### Working
 The master starts a transfer by driving the address and control signals. These signals provide information about the address, direction, width of the transfer, and indicate if
 the transfer forms part of a burst.
 
@@ -91,7 +93,7 @@ A slave cannot request that the address phase is extended and therefore all slav
 the master extends the data phase by using HREADY. This signal, when LOW, causes wait states to be inserted into the transfer and enables the slave to have extra time to
 provide or sample data. The slave uses HRESP to indicate the success or failure of a transfer.
 
-### Signals
+#### Signals Description [Courtesy of ARM]
 ![Screenshot](images/Global_Signals.png)
 
 ![Screenshot](images/MasterS.png)
@@ -103,6 +105,8 @@ provide or sample data. The slave uses HRESP to indicate the success or failure 
 ![Screenshot](images/Decoder.png)
 
 ![Screenshot](images/mux.png)
+
+    $$$ For more info on AHB-Lite do check this documentation by ARM : https://developer.arm.com/documentation/ihi0033/a/
 
 ### Peripherals
 The two peripherals in this SOC are the Block RAM and the LEDs.
