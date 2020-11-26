@@ -45,5 +45,19 @@ The physical memory used to store the instructions is called a program memory. I
         end
 ## Memory Map
 ![Screenshot](images/memorymap.png)
-        
+
+## JTAG Programming interface
+For programming the processor we need an interface. So, in this project I have used the JTAG interface to do that. The verilog code below is the interface I used in this project.
+
+        wire          dbg_tdo;                   // SWV / JTAG TDO
+        wire          dbg_tdo_nen;               // SWV / JTAG TDO tristate enable (active low)
+        wire          dbg_swdo;                  // SWD I/O 3-state output
+        wire          dbg_swdo_en;               // SWD I/O 3-state enable
+        wire          dbg_jtag_nsw;              // SWD in JTAG state (HIGH)
+        wire          dbg_swo;                   // Serial wire viewer/output
+        wire          tdo_enable     = !dbg_tdo_nen | !dbg_jtag_nsw;
+        wire          tdo_tms        = dbg_jtag_nsw         ? dbg_tdo    : dbg_swo;
+        assign        TMS            = dbg_swdo_en          ? dbg_swdo   : 1'bz;
+        assign        TDO            = tdo_enable           ? tdo_tms    : 1'bz;
+
 
