@@ -43,5 +43,7 @@ The physical memory used to store the instructions is called a program memory. I
         $readmemh("code.hex", memory); 
         
         end
+## Memory Map
+![Screenshot](images/memorymap.png)
         
 
