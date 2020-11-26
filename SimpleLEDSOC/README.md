@@ -106,7 +106,7 @@ provide or sample data. The slave uses HRESP to indicate the success or failure 
 
 ![Screenshot](images/mux.png)
 
-    ***  <b> For more info on AHB-Lite do check this documentation by ARM : https://developer.arm.com/documentation/ihi0033/a/ </b>
+    ***   For more info on AHB-Lite do check this documentation by ARM : https://developer.arm.com/documentation/ihi0033/a/  ***
 
 ### Peripherals
 The two peripherals in this SOC are the Block RAM and the LEDs.
