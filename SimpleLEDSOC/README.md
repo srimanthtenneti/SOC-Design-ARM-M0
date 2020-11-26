@@ -2,15 +2,12 @@
 
 The hardware components of the SoC include:
 
-1)An Arm Cortex-M0 microprocessor 
+     • An Arm Cortex-M0 microprocessor 
+     • An AHB-Lite system bus 
+     • Two AHB peripherals : 
 
-2)An AHB-Lite system bus 
-
-3)Two AHB peripherals : 
-
-    1) Program memory (implemented using on-chip memory blocks) 
-    
-    2)A simple LED peripheral
+         • Program memory (implemented using on-chip memory blocks) 
+         • A simple LED peripheral
     
 ## LED SOC design(Architecture)
 ![Screenshot](images/Lab4_image1.png)
@@ -27,13 +24,10 @@ The logic of the Arm Cortex-M0 processor is written in Verilog code, and thus ca
 
 Files used from ARM IP : 
 
-     1) cortexm0ds_logic.v
-     
-     2) CORTEXM0INTEGRATION.v
-     
-     3) AHBMUX.v
-     
-     4) AHBDCD.v
+      • cortexm0ds_logic.v
+      • CORTEXM0INTEGRATION.v
+      • AHBMUX.v
+      • AHBDCD.v
      
 Link for ARM IP : https://developer.arm.com/products/designstart
 
