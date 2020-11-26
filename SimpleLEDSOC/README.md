@@ -65,6 +65,16 @@ AHB-Lite implements the features required for high-performance, high clock frequ
     
 ### AHB-Lite Master
 An AHB-Lite master provides address and control information to initiate read and writem operations. The figure below shows a typical AHB-Lite Master. 
+![Screenshot](images/AHBLITES.png)
+
+### AHB-Lite Slave
+An AHB-Lite slave responds to transfers initiated by masters in the system. The slave uses the HSELx select signal from the decoder to control when it responds to a bus
+transfer. The slave signals back to the master:
+
+    • the success
+    • failure
+    • or waiting of the data transfer
+    
 ![Screenshot](images/AHBLITEM.png)
   
 ### Peripherals
