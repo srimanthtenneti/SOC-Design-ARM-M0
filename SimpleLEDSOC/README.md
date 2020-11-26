@@ -30,3 +30,6 @@ Files used from ARM IP :
      
 Link for ARM IP : https://developer.arm.com/products/designstart
 
+## SOC Block Diagram
+![Screenshot](images/Blockdiagram.png)
+
