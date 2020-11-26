@@ -92,17 +92,16 @@ the master extends the data phase by using HREADY. This signal, when LOW, causes
 provide or sample data. The slave uses HRESP to indicate the success or failure of a transfer.
 
 ### Signals
-
-#### Global Signals
 ![Screenshot](images/Global_Signals.png)
-#### Master Signals
+
 ![Screenshot](images/MasterS.png)
+
 ![Screenshot](images/MS2.png)
-#### Slave Signals
+
 ![Screenshot](images/SlaveS.png)
-#### Decoder Signals
+
 ![Screenshot](images/Decoder.png)
-#### Multiplexer Signals
+
 ![Screenshot](images/mux.png)
 
 ### Peripherals
