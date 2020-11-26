@@ -1,4 +1,5 @@
 # Simple LED SOC
+
 The hardware components of the SoC include:
 
 1)An Arm Cortex-M0 microprocessor 
@@ -10,3 +11,6 @@ The hardware components of the SoC include:
     1) Program memory (implemented using on-chip memory blocks) 
     
     2)A simple LED peripheral
+    
+## LED SOC design
+![Screenshot](images/Lab4_image1.png)
