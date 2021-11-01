@@ -12,7 +12,7 @@ The hardware components of the SoC include:
          • A simple LED peripheral
     
 ## LED SOC design(Architecture)
-![Screenshot](images/Lab4_image1.png)
+![Courtesy ARM](images/Lab4_image1.png)
 
 ## SOC Block Diagram
 ![Screenshot](images/Blockdiagram.png)
